@@ -37,7 +37,7 @@ public class MyClass {
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
   android:text="@string/send"/>
-``` 
+```
 
 - ใน string.xml ใช้อักษรตัวเล็กหมด
 ``` xml
@@ -47,15 +47,15 @@ public class MyClass {
 - ต้องตั้งชื่อตัวแปรของ View เป็นชื่อ id ของ View นั้นๆ
 ``` java
 private Button btSend;
-``` 
+```
 
 ## อื่นๆ
 
-- ประกาศตัวแปรก่อน method ใดๆ ห้ามวางประกาศตัวแปรไว้กลาง class เด็ดขาด 
+- ประกาศตัวแปรก่อน method ใดๆ ห้ามวางประกาศตัวแปรไว้กลาง class เด็ดขาด
 
 - เว้นวรรค 1 ครั้งหลังประกาศ method หรือ if
 
-- limit scope ของตัวแปรให้มากที่สุด 
+- limit scope ของตัวแปรให้มากที่สุด
 ``` java
 void doSomething() {
   if (…) {
@@ -76,12 +76,17 @@ try {
     } catch (NumberFormatException e) { }
 ```
 
-- ทุก if ต้องมี {} ห้าม 
+``` java
+if (condition) {
+  body();
+}
+```
+- ทุก if ต้องมีปีกกา {} ห้ามเขียนแบบนี้
 ``` java
 if (condition)
-    body();
+  body();
 ```
-เด็ดขาด
+เด็ดขาด เพราะเวลา debug ชอบมา Log ล่าง if แล้วลืม
 
 - ใน Activity หรือ Fragment มี method setup() ที่เรียกครั้งดเียว และ update() ที่ไว้เรียกหลายครั้ง
 
@@ -91,3 +96,5 @@ if (condition)
 XmlHttpRequest = ดี
 XMLHTTPRequest = ไม่ดี
 
+## UX
+- ทุกๆ network operation ต้องมี progress bar บางอันให้ user cancel ได้ บางอันห้าม cancel
