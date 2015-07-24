@@ -12,7 +12,7 @@ package.root.util
 ```
 
 ## การตั้งชื่อ
-- Class มีประเภทต่อท้าย เช่น MainActivity, SettingsFragment, CurrencyDialogFragment, CountryAdapter
+- Class มีประเภทต่อท้าย เช่น Main**Activity**, Settings**Fragment**, Currency**DialogFragment**, Country**Adapter**
 - Non-public, non-static นำหน้าด้วย m
 - Static นำหน้าด้วย s
 - Public static final (constants) ตัวใหญ่หมดคั่นด้วยขีดล่าง ALL_CAPS_WITH_UNDERSCORES.
@@ -76,12 +76,13 @@ try {
     } catch (NumberFormatException e) { }
 ```
 
+- ทุก if ต้องมีปีกกา {}
 ``` java
 if (condition) {
   body();
 }
 ```
-- ทุก if ต้องมีปีกกา {} ห้ามเขียนแบบนี้
+ห้ามเขียนแบบนี้
 ``` java
 if (condition)
   body();
@@ -98,3 +99,12 @@ XMLHTTPRequest = ไม่ดี
 
 ## UX
 - ทุกๆ network operation ต้องมี progress bar บางอันให้ user cancel ได้ บางอันห้าม cancel
+
+## Programming
+- ยิง Error และ Exception ทุกอย่างขึ้น Crashlytics
+
+## Development process
+- Rebase ทุกครั้งที่มี develop นำหน้า
+
+## Database
+- ทุกครั้งที่รับสมัคร email หรือ username หรือค่าต่างๆที่จะทำให้ search ได้ ให้ทำเป็น lowercase ก่อน save และ lowercase ก่อน login ทุกครั้ง
